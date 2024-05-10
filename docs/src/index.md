@@ -1,14 +1,14 @@
 ```@meta
-CurrentModule = HermiteInterpolant
+CurrentModule = HermiteInterpolation
 ```
 
-# HermiteInterpolant
+# HermiteInterpolation
 
-Documentation for [HermiteInterpolant](https://github.com/kbarros/HermiteInterpolant.jl).
+Documentation for [HermiteInterpolation](https://github.com/kbarros/HermiteInterpolation.jl).
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [HermiteInterpolant]
+Modules = [HermiteInterpolation]
 ```

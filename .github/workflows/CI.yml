@@ -72,6 +72,6 @@ jobs:
         shell: julia --project=docs --color=yes {0}
         run: |
           using Documenter: DocMeta, doctest
-          using HermiteInterpolant
-          DocMeta.setdocmeta!(HermiteInterpolant, :DocTestSetup, :(using HermiteInterpolant); recursive=true)
-          doctest(HermiteInterpolant)
+          using HermiteInterpolation
+          DocMeta.setdocmeta!(HermiteInterpolation, :DocTestSetup, :(using HermiteInterpolation); recursive=true)
+          doctest(HermiteInterpolation)
