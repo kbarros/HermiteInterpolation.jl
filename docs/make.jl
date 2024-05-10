@@ -1,14 +1,14 @@
-using HermiteInterpolant
+using HermiteInterpolation
 using Documenter
 
-DocMeta.setdocmeta!(HermiteInterpolant, :DocTestSetup, :(using HermiteInterpolant); recursive=true)
+DocMeta.setdocmeta!(HermiteInterpolation, :DocTestSetup, :(using HermiteInterpolation); recursive=true)
 
 makedocs(;
-    modules=[HermiteInterpolant],
+    modules=[HermiteInterpolation],
     authors="Kipton Barros <kbarros@gmail.com> and contributors",
-    sitename="HermiteInterpolant.jl",
+    sitename="HermiteInterpolation.jl",
     format=Documenter.HTML(;
-        canonical="https://kbarros.github.io/HermiteInterpolant.jl",
+        canonical="https://kbarros.github.io/HermiteInterpolation.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -18,6 +18,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/kbarros/HermiteInterpolant.jl",
+    repo="github.com/kbarros/HermiteInterpolation.jl",
     devbranch="main",
 )
