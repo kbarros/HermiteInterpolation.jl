@@ -34,7 +34,7 @@ save("hermite_fit.svg", current_figure())
 <img src="./assets/hermite_fit.svg"></img>
 
 
-The fitting function `f` can be evaluated over any type that supports addition and multiplication. For example, using a symbolic variable `X` from [DynamicPolynomials](https://github.com/JuliaAlgebra/DynamicPolynomials.jl), we build the explicit interpolation polynomial and its derivative:
+The fitting function `f` can be evaluated over any type that supports addition and multiplication. For example, with a symbolic variable `X` from [DynamicPolynomials](https://github.com/JuliaAlgebra/DynamicPolynomials.jl), one can obtain the explicit interpolation polynomial and its derivative:
 
 ```jl
 using DynamicPolynomials
