@@ -1,7 +1,7 @@
 name = "HermiteInterpolation"
 uuid = "e59a9049-0778-4b41-b4a6-c75571210bee"
 authors = ["Kipton Barros <kbarros@gmail.com> and contributors"]
-version = "1.0.0-DEV"
+version = "1.0.0"
 
 [compat]
 julia = "1.10"

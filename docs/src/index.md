@@ -4,11 +4,8 @@ CurrentModule = HermiteInterpolation
 
 # HermiteInterpolation
 
-Documentation for [HermiteInterpolation](https://github.com/kbarros/HermiteInterpolation.jl).
+See project page at [HermiteInterpolation](https://github.com/kbarros/HermiteInterpolation.jl) for more examples.
 
-```@index
-```
-
-```@autodocs
-Modules = [HermiteInterpolation]
+```@docs
+fit
 ```

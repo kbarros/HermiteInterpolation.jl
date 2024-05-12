@@ -6,9 +6,9 @@
 [![Coverage](https://codecov.io/gh/kbarros/HermiteInterpolation.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/kbarros/HermiteInterpolation.jl)
 
 This Julia package implements [Hermite interpolation](https://en.wikipedia.org/wiki/Hermite_interpolation). It takes a list of interpolation points $[x_1, x_2, …, x_n]$, along with data for a
-function $y(x_i)$ and some number $m-1$ of its derivatives $y'(x_i)$, $y''(x_i)$, etc. This package will find the unique interpolating polynomial, up to order $m n$, which exactly matches the data. [_In the current implementation, both $y$ and $y'$ are required._]
+function $y(x)$ and its derivatives $d^n y/dx^n$ up to some order $n = 1, …, m-1$. Fitting yields the unique polynomial less than order $m n$ that exactly matches the provided data. Without derivatives, the method reduces to Lagrange interpolation.
 
-Use `HermiteInterpolation.fit` build an interpolation function:
+Use `fit` to build an interpolation function:
 
 ```jl
 x = [1.5, 2.5, 3.5]
@@ -34,7 +34,7 @@ save("hermite_fit.svg", current_figure())
 <img src="./assets/hermite_fit.svg"></img>
 
 
-The fitting function `f` can be evaluated over any type that supports addition and multiplication. For example, using a symbolic variable `X` from [DynamicPolynomials](https://github.com/JuliaAlgebra/DynamicPolynomials.jl), we build the explicit interpolation polynomial and its derivative:
+The fitting function `f` can be evaluated over any type that supports addition and multiplication. For example, with a symbolic variable `X` from [DynamicPolynomials](https://github.com/JuliaAlgebra/DynamicPolynomials.jl), one can obtain the explicit interpolation polynomial and its derivative:
 
 ```jl
 using DynamicPolynomials
