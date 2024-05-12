@@ -6,9 +6,9 @@
 [![Coverage](https://codecov.io/gh/kbarros/HermiteInterpolation.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/kbarros/HermiteInterpolation.jl)
 
 This Julia package implements [Hermite interpolation](https://en.wikipedia.org/wiki/Hermite_interpolation). It takes a list of interpolation points $[x_1, x_2, …, x_n]$, along with data for a
-function $y(x_i)$ and some number $m-1$ of its derivatives $y'(x_i)$, $y''(x_i)$, etc. This package will find the unique interpolating polynomial less than order $m n$ that exactly matches the data.
+function $y(x)$ and its derivatives $d^n y/dx^n$ up to some order $n = 1, …, m-1$. Hermite interpolation will produce the unique polynomial less than order $m n$ that exactly matches the provided data. Without derivatives, it reduces to [Lagrange interpolation](https://en.wikipedia.org/wiki/Lagrange_polynomial).
 
-Use `HermiteInterpolation.fit` build an interpolation function:
+Use `fit` to build an interpolation function:
 
 ```jl
 x = [1.5, 2.5, 3.5]
