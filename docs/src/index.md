@@ -4,7 +4,7 @@ CurrentModule = HermiteInterpolation
 
 # HermiteInterpolation
 
-See project page at [HermiteInterpolation](https://github.com/kbarros/HermiteInterpolation.jl) for more examples.
+This package provides a single function. See the [project page](https://github.com/kbarros/HermiteInterpolation.jl) for more usage examples.
 
 ```@docs
 fit

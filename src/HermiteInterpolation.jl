@@ -30,8 +30,8 @@ end
 """
     fit(x, y, [y′, y″, ...])
 
-Builds a polynomial fit to the sample points ``x`` with labels ``y``. The
-remaining, optional arguments may provide derivative data, ``dⁿy/dxⁿ`` for ``n =
+Builds a polynomial fit to ``n`` sample points ``x`` with labels ``y``. The
+remaining, optional arguments may provide derivative data, ``dʲy/dxʲ`` for ``j =
 1, … m-1``. The Hermite interpolation procedure returns a unique polynomial of
 degree less than ``m n``. Absent derivative data (``m = 1``) the method reduces
 to Lagrange interpolation. 

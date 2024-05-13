@@ -5,10 +5,11 @@
 [![Build Status](https://github.com/kbarros/HermiteInterpolation.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/kbarros/HermiteInterpolation.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/kbarros/HermiteInterpolation.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/kbarros/HermiteInterpolation.jl)
 
-This Julia package implements [Hermite interpolation](https://en.wikipedia.org/wiki/Hermite_interpolation). It takes a list of interpolation points $[x_1, x_2, …, x_n]$, along with data for a
-function $y(x)$ and its derivatives $d^n y/dx^n$ up to some order $n = 1, …, m-1$. Fitting yields the unique polynomial less than order $m n$ that exactly matches the provided data. Without derivatives, the method reduces to Lagrange interpolation.
+This Julia package implements [Hermite interpolation](https://en.wikipedia.org/wiki/Hermite_interpolation). It takes a list of interpolation points $[x_1, x_2, …, x_n]$ and corresponding labels for $y(x)$. Derivative data $d^j y/dx^j$ may also be provided up to arbitrary order, $j = 1, …, m-1$. Hermite interpolation yields the unique polynomial less than order $m n$ that exactly matches the data. Without derivatives, the method is known as Lagrange interpolation.
 
-Use `fit` to build an interpolation function:
+### Usage example
+
+Build an interpolation function with `fit`:
 
 ```jl
 x = [1.5, 2.5, 3.5]
@@ -21,20 +22,19 @@ f = HermiteInterpolation.fit(x, y, yp)
 @assert f(1.5) ≈ 1.0
 ```
 
-Verify visually that the resulting curve matches the sample data for both $y$ and $y'$:
+See that the interpolation function matches the data for both $y$ and $y'$:
 
 ```jl
-using CairoMakie
+using GLMakie
 x_range = 1.2:0.02:3.8
 lines(x_range, f.(x_range))
 plot!(x, y; markersize=12, color=:red)
-save("hermite_fit.svg", current_figure())
 ```
 
 <img src="./assets/hermite_fit.svg"></img>
 
 
-The fitting function `f` can be evaluated over any type that supports addition and multiplication. For example, with a symbolic variable `X` from [DynamicPolynomials](https://github.com/JuliaAlgebra/DynamicPolynomials.jl), one can obtain the explicit interpolation polynomial and its derivative:
+The interpolation function can be evaluated on any type that supports addition and multiplication. For example, [DynamicPolynomials.jl](https://github.com/JuliaAlgebra/DynamicPolynomials.jl) can build the polynomial symbolically:
 
 ```jl
 using DynamicPolynomials
